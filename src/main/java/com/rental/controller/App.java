@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.rental.bo.UserBo;
+import com.rental.facade.interfaces.IUserFacade;
 import com.rental.model.User;
 
 
@@ -15,7 +15,7 @@ import com.rental.model.User;
 public class App {
 
 	@Autowired
-	private UserBo<User> userBo;
+	private IUserFacade<User> userFacade;
 	
 	public String saveUser()throws ParseException{
 		/** insert **/
@@ -25,7 +25,7 @@ public class App {
     	user.setId("4");
     	user.setPassword("password");
     	
-    	userBo.save(user);
+    	userFacade.save(user);
 		
     	return "SAVE OKE";
 	}

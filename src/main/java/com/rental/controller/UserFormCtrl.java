@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.rental.bo.UserBo;
+import com.rental.facade.interfaces.IUserFacade;
 import com.rental.model.User;
 
 @Controller
@@ -17,7 +17,7 @@ public class UserFormCtrl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private UserBo<User> userBo;
+	private IUserFacade<User> userBo;
 	
 	User user = new User();
 

@@ -8,7 +8,9 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public abstract class CommonDaoImpl<T> implements CommonDao<T> {
+import com.rental.common.interfaces.ICommonDao;
+
+public abstract class CommonDaoImpl<T> implements ICommonDao<T> {
 
 	@Autowired
 	private SessionFactory sessionFactory;

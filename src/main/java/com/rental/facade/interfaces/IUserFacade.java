@@ -1,10 +1,10 @@
-package com.rental.bo;
+package com.rental.facade.interfaces;
 
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 
-public interface UserBo<T> {
+public interface IUserFacade<T> {
 	
 	public void save(T entity);
 	public void update(T entity);

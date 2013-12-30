@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.rental.bo.UserBoImpl;
+import com.rental.facade.UserFacade;
 import com.rental.model.User;
 
 @Controller
@@ -21,7 +21,7 @@ public class UserListCtrl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	UserBoImpl userBoImpl;
+	UserFacade userBoImpl;
 	
 	private String searchBy;
 	private String keyWord;

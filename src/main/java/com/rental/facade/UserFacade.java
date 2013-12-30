@@ -1,4 +1,4 @@
-package com.rental.bo;
+package com.rental.facade;
 
 import java.util.List;
 
@@ -7,14 +7,15 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rental.common.CommonDao;
+import com.rental.common.interfaces.ICommonDao;
+import com.rental.facade.interfaces.IUserFacade;
 import com.rental.model.User;
 
 @Service
-public class UserBoImpl implements UserBo<User>{
+public class UserFacade implements IUserFacade<User>{
 	
 	@Autowired
-	private CommonDao<User> commonDao;
+	private ICommonDao<User> commonDao;
 
 	@Override
 	public void save(User entity) {
