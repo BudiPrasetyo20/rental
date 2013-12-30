@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:sc="http://java.sun.com/jsf/composite/components/common"
+	template="/pages/home/home.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<ui:define name="content">
+
+<html>
+<h:body>
+	<div id="cols" class="box">
+		<div id="content">
+			<h2 id="content-title">List User / Member</h2>
+			<div id="content-in">
+			
+			<h:form>
+				<div id="sections" class="box">
+					<div class="section">
+						<h3>Search Panel</h3>
+						<fieldset style="width: auto;" id="fieldset">
+						<a href="form.xhtml">
+						<h:graphicImage value="/resources/icon/add.png" />
+						</a>
+						<br />
+						
+						<h:outputText value="Search By :" />
+						<br />
+						<h:selectOneMenu id="searchBy"
+							value="#{userListCtrl.searchBy}" required="true"
+							styleClass="required" style="height:20px">
+							<f:selectItems value="#{userListCtrl.searchByList}" />
+						</h:selectOneMenu>
+						
+						<h:outputText value="&nbsp; &nbsp;&nbsp;" />
+						<h:inputText id="keyWord" value="#{userListCtrl.keyWord}" 
+						maxlength="100" styleClass="text medium" style="font-size:12px ; height:20px" size = "50"  />
+						
+						<h:outputText value="&nbsp; &nbsp;&nbsp;" />
+						<a4j:commandButton value="Search" style="font-size:12px ; height:20px; pading:5px"  />
+						
+						<br />
+						<h:selectOneRadio value="#{userListCtrl.status}" style="margin-top:10px">
+                            <f:selectItem id="item1" itemLabel="Active" itemValue="#{activeDeactiveType.Active.getVal()}" />
+       						<f:selectItem id="item2" itemLabel="Deactive" itemValue="#{activeDeactiveType.Deactive.getVal()}" />
+	                    </h:selectOneRadio>
+						</fieldset>
+					</div>
+				</div>
+			</h:form>
+
+			<h:form>
+			<br />
+				<rich:dataTable id="dataGrid"
+					value="#{purchaseOrderApfListCtrl.listOf}" var="rec"
+					rows="#{purchaseOrderApfListCtrl.getPageSize()}">
+
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="header" />
+						</f:facet>
+						<h:outputText value="test" />
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="header" />
+						</f:facet>
+						<h:outputText value="test" />
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="header" />
+						</f:facet>
+						<h:outputText value="test" />
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="header" />
+						</f:facet>
+						<h:outputText value="test" />
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="header" />
+						</f:facet>
+						<h:outputText value="test" />
+					</rich:column>
+
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="header" />
+						</f:facet>
+						<h:outputText value="test" />
+					</rich:column>
+
+					<rich:column styleClass="center">
+						<f:facet name="header">
+							<h:outputText value="action" />
+						</f:facet>
+						<a4j:commandButton image="/resources/icon/activate.png" />
+						<a4j:commandButton image="/resources/icon/deactivate.png" />
+						<a4j:commandButton image="/resources/icon/activate.png" />
+					</rich:column>
+				</rich:dataTable>
+			</h:form>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
+	</ui:define>
+
+</ui:composition>

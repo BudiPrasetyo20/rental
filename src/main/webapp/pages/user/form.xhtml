@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:sc="http://java.sun.com/jsf/composite/components"
+	template="/pages/home/home.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<ui:define name="content">
+
+<html>
+<h:body>
+	<div id="cols" class="box">
+		<div id="content">
+			<h2 id="content-title">Add User / Member</h2>
+			<div id="content-in">
+			<h:form>
+				<h:outputLabel value="id" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:outputText value="" /><br />
+				
+				<h:outputLabel value="Nama" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:inputText value="#{userFormCtrl.user.name}"/><br />
+				
+				<h:outputLabel value="Telp" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:inputText value="#{userFormCtrl.user.telp}"/><br />
+				
+				<h:outputLabel value="Alamat" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:inputTextarea value="#{userFormCtrl.user.telp}" /><br />
+				
+				<h:outputLabel value="No Identitas" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:inputText value="#{userFormCtrl.user.identityNumber}"/><br />
+				
+				<h:outputLabel value="Tanggal Daftar" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<rich:calendar id="tglDaftar" datePattern="dd/MM/yyyy"
+							value="#{userFormCtrl.user.registerDate}"/><br />
+				
+				<h:outputLabel value="Type User" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:selectOneRadio value="#{userFormCtrl.user.userType}">
+                    <f:selectItem id="item1" itemLabel="User" itemValue="#{userType.Member.getVal()}" />
+  					<f:selectItem id="item2" itemLabel="Admin" itemValue="#{userType.Admin.getVal()}" />
+  					<f:selectItem id="item3" itemLabel="SuperAdmin" itemValue="#{userType.SuperAdmin.getVal()}" />
+                </h:selectOneRadio>
+				
+				<h:outputLabel value="Password" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:inputText value="#{userFormCtrl.user.password}"/><br />
+				
+				<h:outputLabel value="Confirm Password" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:inputText value="#{userFormCtrl.user.password}"/><br />
+				
+				<h:outputLabel value="Status Pinjam" style=" margin-left: 5px; width: 150px; float:left;"/>
+				<h:outputText value=":" style=" margin-right: 5px;"/>
+				<h:outputText value="#{userFormCtrl.user.userStatusBorrow}"/><br /><br />
+				
+				<a4j:commandButton image="/resources/icon/save.png" 
+					action="#{userFormCtrl.saveEntity()}" style="margin-left: 5px; height:40px;"  />
+
+			</h:form>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
+	</ui:define>
+
+</ui:composition>

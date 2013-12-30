@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" xml:lang="en" lang="en"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:util="http://java.sun.com/jsf/composite/util"
+	xmlns:rich="http://richfaces.org/rich">
+<h:head>
+	<link rel="stylesheet" media="screen,projection" type="text/css"
+		href="../../resources/css/main.css" />
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="css/main-msie.css" /><![endif]-->
+	<link rel="stylesheet" media="screen,projection" type="text/css"
+		href="../../resources/css/scheme.css" />
+	<link rel="stylesheet" media="print" type="text/css"
+		href="../../resources/css/print.css" />
+
+	<title>Java Disk Rental</title>
+</h:head>
+
+<h:body>
+	<div id="main">
+		<div id="header">
+			<h1 id="logo">
+				<a href="#">JAVA <span>Disk</span> Rental
+				</a>
+			</h1>
+			<hr class="noscreen" />
+			<p class="noscreen noprint">
+				<em>Quick links: <a href="#content">content</a>, <a href="#nav">navigation</a>.
+				</em>
+			</p>
+		</div>
+
+		<div id="nav">
+			<ul class="box">
+				<li id="nav-active"><a href="../katalog/katalog.xhtml">Search /
+						Catalog</a></li>
+				<li id="nav-active"><a href="../user/user.xhtml">User / Member</a></li>
+				<li id="nav-active"><a href="../film/film.xhtml">List Film</a></li>
+				<li id="nav-active"><a href="../order/order.xhtml">Order / Sewa Film</a></li>
+				<li id="nav-active"><a href="../setting/setting.xhtml">Master Setting</a></li>
+				<li id="nav-active"><a href="../report/report.xhtml">Report</a></li>
+			</ul>
+		</div>
+
+		<ui:insert name="content">Content</ui:insert>
+
+		<div id="cols-bottom"></div>
+		<div id="footer">
+			<p>
+				&copy;&nbsp;2008 <a href="#">JAVA DISK RENTAL</a>
+			</p>
+		</div>
+	</div>
+</h:body>
+</html>
