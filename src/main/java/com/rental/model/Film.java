@@ -182,11 +182,11 @@ public class Film implements CreateAudit, UpdateAudit {
 		this.lastUpdateDate = lastUpdateDate;
 	}
 
-	public String getStatus() {
+	public Character getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Character status) {
 		this.status = status;
 	}
 

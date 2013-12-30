@@ -18,7 +18,7 @@ import org.hibernate.annotations.ForeignKey;
 import com.rental.common.CommonUtil;
 import com.rental.common.CreateAudit;
 import com.rental.common.UpdateAudit;
-import com.rental.enumeration.ActiveDeactiveType;
+import com.rental.enumeration.FilmItemStatusType;
 
 @Entity
 @Table(name = "FILM_ITEM")
@@ -43,11 +43,8 @@ public class FilmItem implements CreateAudit, UpdateAudit {
 	@Column(name = "TANGGAL_AVAILABLE")
 	private Date tanggalAvailable;
 
-	@Column(name = "STATUS_KONDISI", length = 5)
-	private String statusKondisi;
-
-	@Column(name = "STATUS", length = 2)
-	private String status = ActiveDeactiveType.Active.getVal();
+	@Column(name = "STATUS_KONDISI", length = 1)
+	private Character statusKondisi = FilmItemStatusType.Good.getVal();
 
 	@Column(name = "REMARKS", columnDefinition = "TEXT")
 	private String remarks;
@@ -121,20 +118,12 @@ public class FilmItem implements CreateAudit, UpdateAudit {
 		this.tanggalAvailable = tanggalAvailable;
 	}
 
-	public String getStatusKondisi() {
+	public Character getStatusKondisi() {
 		return statusKondisi;
 	}
 
-	public void setStatusKondisi(String statusKondisi) {
+	public void setStatusKondisi(Character statusKondisi) {
 		this.statusKondisi = statusKondisi;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public String getRemarks() {
