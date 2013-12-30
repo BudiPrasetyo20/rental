@@ -51,8 +51,8 @@ public class Order implements CreateAudit, UpdateAudit {
 	@Column(name = "JAMINAN", columnDefinition = "TEXT")
 	private String jaminan;
 
-	@Column(name = "STATUS_PINJAMAN", length = 1)
-	private Character statusPinjaman = OrderStatusType.Process.getVal();
+	@Column(name = "STATUS_PINJAMAN", length = 2)
+	private String statusPinjaman = OrderStatusType.Process.getVal();
 
 	@Column(name = "CREATE_BY", nullable = false, length = 20)
 	private String createBy;
@@ -69,7 +69,6 @@ public class Order implements CreateAudit, UpdateAudit {
 	@Column(name = "LAST_UPDATE_DATE")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date lastUpdateDate;
-
 
 	public String getId() {
 		return id;
@@ -151,11 +150,11 @@ public class Order implements CreateAudit, UpdateAudit {
 		this.jaminan = jaminan;
 	}
 
-	public Character getStatusPinjaman() {
+	public String getStatusPinjaman() {
 		return statusPinjaman;
 	}
 
-	public void setStatusPinjaman(Character statusPinjaman) {
+	public void setStatusPinjaman(String statusPinjaman) {
 		this.statusPinjaman = statusPinjaman;
 	}
 
