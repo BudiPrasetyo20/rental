@@ -1,7 +1,6 @@
 package com.rental.controller;
 
 import java.io.Serializable;
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -17,14 +16,11 @@ public class UserFormCtrl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private IUserFacade<User> userBo;
+	private IUserFacade userBo;
 	
 	User user = new User();
 
 	
-	private void saveEntity() {
-		userBo.save(user);
-	}
 	
 	
 	

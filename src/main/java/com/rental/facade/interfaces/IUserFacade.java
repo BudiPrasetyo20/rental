@@ -11,5 +11,6 @@ public interface IUserFacade<T> {
 	public void delete(T entity);
 	public void findBykey(Object object);
 	public List<T> find(DetachedCriteria detachedCriteria) throws Exception;
+	
 
 }

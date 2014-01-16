@@ -7,10 +7,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
 
 import com.rental.common.interfaces.ICommonDao;
 
-public abstract class CommonDaoImpl<T> implements ICommonDao<T> {
+@Repository
+@Primary
+public class CommonDao<T> implements ICommonDao<T> {
 
 	@Autowired
 	private SessionFactory sessionFactory;
